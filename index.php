@@ -4,7 +4,7 @@ require_once('facebook-php-sdk-v4-4.0-dev/autoload.php');
 use Facebook\FacebookSession;
 use Facebook\FacebookRedirectLoginHelper;
 FacebookSession::setDefaultApplication('830895360333908', '1708e1395643f03807caab41e9055332');
-$helper = new FacebookRedirectLoginHelper('localhost:8080');
+$helper = new FacebookRedirectLoginHelper('https://projet-esgi.herokuapp.com/');
 $loginUrl = $helper->getLoginUrl();
 
 ?>
