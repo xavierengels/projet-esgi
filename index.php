@@ -10,8 +10,14 @@ $loginUrl = $helper->getLoginUrl();
 
 if(isset($_SESSION) && isset($_SESSION['fb_token']))
 {
-
+	$session = new FacebookSession($_SESSION['fb_token']);
+	echo $session;
 }
+else
+{
+	$session = $helper->getSessionFromRedirect();
+	echo $session;
+}	
 
 ?>
 <html>
@@ -19,7 +25,8 @@ if(isset($_SESSION) && isset($_SESSION['fb_token']))
 </head>
 
 <body>
-	<div
+<div class="fb-login-button" data-max-rows="1" data-size="medium" data-show-faces="false" data-auto-logout-link="false"></div>
+<div
   class="fb-like"
   data-share="true"
   data-width="450"
