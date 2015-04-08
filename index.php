@@ -15,8 +15,8 @@ if(isset($_SESSION) && isset($_SESSION['fb_token']))
 }
 else
 {
-	$session = $helper->getSessionFromRedirect();
-	var_dump($session);
+	   $session = $helper->getSessionFromRedirect();
+      
 }	
 
 ?>
@@ -34,10 +34,19 @@ else
 </div>
 
   <?php
-            $loginUrl = $helper->getLoginUrl();
-            echo "<a href='".$loginUrl."'>Se connecter</a>";
-            $session = $helper->getSessionFromRedirect();
-            var_dump($session);
+  if($session)
+  {
+  	 $token = (string) $session->getAccessToken();
+     $_SESSION['fb_token'] = $token;
+  }
+  else
+  {
+  	 $loginUrl = $helper->getLoginUrl();
+     echo "<a href='".$loginUrl."'>Se connecter</a>";
+  }
+           
+
+    
    ?>
 </body>
 
