@@ -7,6 +7,12 @@ FacebookSession::setDefaultApplication('830895360333908', '1708e1395643f03807caa
 $helper = new FacebookRedirectLoginHelper('https://projet-esgi.herokuapp.com/');
 $loginUrl = $helper->getLoginUrl();
 
+
+if(isset($_SESSION) && isset($_SESSION['fb_token']))
+{
+
+}
+
 ?>
 <html>
 <head>
