@@ -1,4 +1,6 @@
 <?php
+ini_set('display_errors', 1);
+error_reporting(e_all);
 session_start();
 require_once('facebook-php-sdk-v4-4.0-dev/autoload.php');
 use Facebook\FacebookSession;
