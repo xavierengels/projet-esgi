@@ -32,6 +32,13 @@ else
   data-width="450"
   data-show-faces="true">
 </div>
+
+  <?php
+            $loginUrl = $helper->getLoginUrl();
+            echo "<a href='".$loginUrl."'>Se connecter</a>";
+            $session = $helper->getSessionFromRedirect();
+            var_dump($session);
+   ?>
 </body>
 
 <script>
