@@ -11,12 +11,12 @@ $loginUrl = $helper->getLoginUrl();
 if(isset($_SESSION) && isset($_SESSION['fb_token']))
 {
 	$session = new FacebookSession($_SESSION['fb_token']);
-	echo $session;
+	var_dump($session);
 }
 else
 {
 	$session = $helper->getSessionFromRedirect();
-	echo $session;
+	var_dump($session);
 }	
 
 ?>
